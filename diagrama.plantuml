@@ -1,0 +1,30 @@
+@startuml diagrama
+interface ReprodutorMusical {
+  + tocar()
+  + pausar()
+  + selecionarMusica(musica: String)
+}
+
+interface AparelhoTelefonico {
+  + ligar(numero: String)
+  + atender()
+  + iniciarCorreioVoz()
+}
+
+interface NavegadorInternet {
+  + exibirPagina(url: String)
+  + adicionarNovaAba()
+  + atualizarPagina()
+}
+
+class iPhone {
+  <<interface>>
+  ReprodutorMusical
+  AparelhoTelefonico
+  NavegadorInternet
+}
+
+iPhone --> ReprodutorMusical
+iPhone --> AparelhoTelefonico
+iPhone --> NavegadorInternet
+@enduml
